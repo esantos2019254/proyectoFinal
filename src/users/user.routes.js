@@ -13,7 +13,7 @@ import {
     existsUserById,
 } from "../helpers/db-validators.js";
 import { validateFields } from "../middlewares/validate-fields.js";
-/*import { tieneRole } from "../middlewares/validar-roles.js";*/
+import { tieneRole } from "../middlewares/validate-roles.js";
 import { validateJWT } from "../middlewares/validate-jwt.js";
 
 const router = Router();
@@ -47,6 +47,8 @@ router.post(
 router.put(
     "/:id",
     [
+        validateJWT,
+        tieneRole('ADMIN_ROLE'),
         check("id", "No es un ID válido").isMongoId(),
         check("id").custom(existsUserById),
         check("password", "El password debe ser mayor a 6 caracteres").isLength({
@@ -61,6 +63,8 @@ router.put(
 router.delete(
     "/:id",
     [
+        validateJWT,
+        tieneRole('ADMIN_ROLE'),
         check("id", "No es un ID válido").isMongoId(),
         check("id").custom(existsUserById),
         validateFields,
