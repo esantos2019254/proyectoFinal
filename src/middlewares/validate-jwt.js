@@ -6,7 +6,7 @@ export const validateJWT = async (req, res, next) => {
 
   if (!token) {
     return res.status(401).json({
-      msg: "No hay token en la petición",
+      msg: "There is no token in the request",
     });
   }
 
