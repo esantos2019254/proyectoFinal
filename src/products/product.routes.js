@@ -7,7 +7,7 @@ import {
     productsPut,
     productsDelete,
     getOutOfStockProducts,
-    getBestSellingProducts,
+    getBestSellingProducts
 } from "./product.controller.js";
 import {
     existsProductById,
