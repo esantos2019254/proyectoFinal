@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "65ea943de252e9f5b7cfed3f"
+  },
+  "name": "pan",
+  "price": 123.324,
+  "quantityStock": 12,
+  "quantitySold": 0,
+  "state": true,
+  "category": {
+    "$oid": "65ea6a7f431a006ff5f88443"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ea9450e252e9f5b7cfed42"
+  },
+  "name": "Peras",
+  "price": 123.324,
+  "quantityStock": 12,
+  "quantitySold": 0,
+  "state": true,
+  "category": {
+    "$oid": "65ea6a7f431a006ff5f88443"
+  },
+  "__v": 0
+}]

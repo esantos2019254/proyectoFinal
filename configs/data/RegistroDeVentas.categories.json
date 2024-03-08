@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "65ea6a7f431a006ff5f88443"
+  },
+  "name": "Alimentos",
+  "state": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ea6a84431a006ff5f88446"
+  },
+  "name": "actualizado",
+  "state": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ea6aa2431a006ff5f88449"
+  },
+  "name": "Moda y accesorios",
+  "state": true,
+  "__v": 0
+}]

@@ -1,0 +1,29 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Login",
+    "dateExported": "2024-03-08T04:34:33.378Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "07c39314-ec1a-4d68-bbfa-0e0138491047",
+            "colId": "dded5edb-b0be-4455-bda0-8526ceca071d",
+            "containerId": "",
+            "name": "Log in",
+            "url": "http://localhost:3000/ventasAPI/v1/auth/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-03-08T01:32:49.027Z",
+            "modified": "2024-03-08T04:33:20.120Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"esantos@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        }
+    ]
+}
