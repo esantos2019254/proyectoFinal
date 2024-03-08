@@ -18,13 +18,18 @@ import { validateJWT } from "../middlewares/validate-jwt.js";
 
 const router = Router();
 
-router.get("/", productsGet);
+router.get("/",
+    validateJWT,
+    productsGet
+);
 
 router.get(
     "/:id",
     [
+        validateJWT,
         check("id", "No es un ID válido").isMongoId(),
         check("id").custom(existsProductById),
+        validateRolActions,
         validateFields,
     ],
     getProductById
@@ -32,10 +37,12 @@ router.get(
 
 router.get(
     "/:out-of-stock-products",
+    validateJWT,
+    validateRolActions,
     getOutOfStockProducts
 );
 
-router.get('/:best-selling-products', 
+router.get('/:best-selling-products',
     getBestSellingProducts
 );
 
