@@ -1,4 +1,6 @@
 import { validationResult } from "express-validator";
+import Category from '../categories/category.model.js';
+import Product from '../products/product.model.js';
 
 export const validateFields = (req, res, next) => {
     const error = validationResult(req);
@@ -39,4 +41,29 @@ export const validateRolActions = (req, res, next) => {
 
     next();
 
+}
+
+export const validateDeleteCategory = async (req, res, next) => {
+
+    const { id } = req.params;
+
+    try {
+
+        const category = await Category.findById(id);
+        if (!category) {
+            return res.status(404).json({ msg: 'Category not found' });
+        }
+
+        const defaultCategory = await Category.findOne({ name: 'Default' });
+        if (!defaultCategory) {
+            return res.status(404).json({ msg: 'Default category not found' });
+        }
+
+        await Product.updateMany({ category: id }, { category: defaultCategory._id });
+
+        next();
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 }

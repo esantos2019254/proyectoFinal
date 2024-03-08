@@ -10,7 +10,7 @@ import {
 import {
     existsCategoryById,
 } from "../helpers/db-validators.js";
-import { validateFields, validateRolActions } from "../middlewares/validate-fields.js";
+import { validateFields, validateRolActions, validateDeleteCategory } from "../middlewares/validate-fields.js";
 import { validateJWT } from "../middlewares/validate-jwt.js";
 
 const router = Router();
@@ -57,6 +57,7 @@ router.delete(
         check("id", "No es un ID válido").isMongoId(),
         check("id").custom(existsCategoryById),
         validateRolActions,
+        validateDeleteCategory,
         validateFields,
     ],
     categoriesDelete
