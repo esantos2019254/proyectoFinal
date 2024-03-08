@@ -8,6 +8,7 @@ import {
     productsDelete,
     getOutOfStockProducts,
     getBestSellingProducts,
+    searchProductsByName
 } from "./product.controller.js";
 import {
     existsProductById,
@@ -36,6 +37,10 @@ router.get(
 
 router.get('/:best-selling-products', 
     getBestSellingProducts
+);
+
+router.get('/:products/search/:name',
+    searchProductsByName
 );
 
 router.post(

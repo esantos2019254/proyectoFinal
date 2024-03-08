@@ -57,6 +57,19 @@ export const getProductById = async (req, res) => {
     });
 }
 
+
+export const searchProductsByName = async (req, res) => {
+    const { name } = req.params;
+
+    try {
+        const products = await Product.find({ name: { $regex: new RegExp(name, 'i') } });
+        res.status(200).json({ products });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+}
+
 export const productsPost = async (req, res) => {
 
     const { name, price, quantityStock, quantitySold, category } = req.body;

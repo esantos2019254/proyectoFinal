@@ -11,6 +11,7 @@ import categoryRoutes from '../src/categories/category.routes.js';
 import productRoutes from '../src/products/product.routes.js';
 import { getOutOfStockProducts } from '../src/products/product.controller.js';
 import { getBestSellingProducts } from '../src/products/product.controller.js';
+import { searchProductsByName } from '../src/products/product.controller.js';
 class Server{
     constructor(){
         this.app = express();
@@ -43,6 +44,7 @@ class Server{
         this.app.use(this.productPath, productRoutes);
         this.app.get('/ventasAPI/v1/out-of-stock-products', getOutOfStockProducts);
         this.app.get('/ventasAPI/v1/best-selling-products', getBestSellingProducts);
+        this.app.get('/ventasAPI/v1/products/search/:name', searchProductsByName);
     }
 
     listen(){
