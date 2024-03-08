@@ -1,46 +1,42 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import {
-    usersGet,
-    usersPost,
-    getUserById,
-    usersPut,
-    usersDelete,
-} from "./user.controller.js";
+    categoriesGet,
+    categoriesPost,
+    getCategoryById,
+    categoriesPut,
+    categoriesDelete,
+} from "./category.controller.js";
 import {
-    existsEmail,
     esRoleValido,
-    existsUserById,
+    existsCategoryById,
 } from "../helpers/db-validators.js";
 import { validateFields, validateRol } from "../middlewares/validate-fields.js";
 import { validateJWT } from "../middlewares/validate-jwt.js";
 
 const router = Router();
 
-router.get("/", usersGet);
+router.get("/", categoriesGet);
 
 router.get(
     "/:id",
     [
         check("id", "No es un ID válido").isMongoId(),
-        check("id").custom(existsUserById),
+        check("id").custom(existsCategoryById),
         validateFields,
     ],
-    getUserById
+    getCategoryById
 );
 
 router.post(
     "/",
     [
+        validateJWT,
         check("name", "El nombre es obligatorio").not().isEmpty(),
-        check("password", "El password debe ser mayor a 6 caracteres").isLength({
-            min: 6,
-        }),
-        check("email", "Este no es un correo válido").isEmail(),
-        check("email").custom(existsEmail),
+        validateRol,
         validateFields,
     ],
-    usersPost
+    categoriesPost
 );
 
 router.put(
@@ -48,15 +44,12 @@ router.put(
     [
         validateJWT,
         check("id", "No es un ID válido").isMongoId(),
-        check("id").custom(existsUserById),
-        check("password", "El password debe ser mayor a 6 caracteres").isLength({
-            min: 6,
-        }),
+        check("id").custom(existsCategoryById),
         check("role").custom(esRoleValido),
         validateRol,
         validateFields,
     ],
-    usersPut
+    categoriesPut
 );
 
 router.delete(
@@ -64,11 +57,11 @@ router.delete(
     [
         validateJWT,
         check("id", "No es un ID válido").isMongoId(),
-        check("id").custom(existsUserById),
+        check("id").custom(existsCategoryById),
         validateRol,
         validateFields,
     ],
-    usersDelete
+    categoriesDelete
 );
 
 export default router;
