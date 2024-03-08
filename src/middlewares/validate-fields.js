@@ -28,3 +28,15 @@ export const validateRol = (req, res, next) => {
     next();
 
 }
+
+export const validateRolActions = (req, res, next) => {
+
+    const userRole = req.user.role;
+
+    if (userRole === 'CLIENT_ROLE') {
+        return res.status(403).json({ msg: 'You are not an admin to perform this action.' });
+    }
+
+    next();
+
+}

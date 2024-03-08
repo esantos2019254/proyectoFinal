@@ -11,7 +11,7 @@ import {
     esRoleValido,
     existsCategoryById,
 } from "../helpers/db-validators.js";
-import { validateFields, validateRol } from "../middlewares/validate-fields.js";
+import { validateFields, validateRolActions } from "../middlewares/validate-fields.js";
 import { validateJWT } from "../middlewares/validate-jwt.js";
 
 const router = Router();
@@ -33,7 +33,7 @@ router.post(
     [
         validateJWT,
         check("name", "El nombre es obligatorio").not().isEmpty(),
-        validateRol,
+        validateRolActions,
         validateFields,
     ],
     categoriesPost
@@ -45,8 +45,7 @@ router.put(
         validateJWT,
         check("id", "No es un ID válido").isMongoId(),
         check("id").custom(existsCategoryById),
-        check("role").custom(esRoleValido),
-        validateRol,
+        validateRolActions,
         validateFields,
     ],
     categoriesPut
@@ -58,7 +57,7 @@ router.delete(
         validateJWT,
         check("id", "No es un ID válido").isMongoId(),
         check("id").custom(existsCategoryById),
-        validateRol,
+        validateRolActions,
         validateFields,
     ],
     categoriesDelete

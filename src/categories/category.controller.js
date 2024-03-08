@@ -32,7 +32,7 @@ export const getCategoryById = async (req, res) => {
 export const categoriesPost = async (req, res) => {
     
     const { name } = req.body;
-    const category = new Curso({ name });
+    const category = new Category({ name });
 
     await category.save();
 
