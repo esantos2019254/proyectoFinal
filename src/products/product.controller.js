@@ -9,6 +9,10 @@ export const productsGet = async (req = request, res = response) => {
     const [total, products] = await Promise.all([
         Product.countDocuments(query),
         Product.find(query)
+            .populate({
+                path: 'category',
+                select: 'name -_id'
+            })
             .skip(Number(desde))
             .limit(Number(limite))
     ]);
