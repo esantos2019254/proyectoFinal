@@ -36,7 +36,7 @@ router.get(
 );
 
 router.get(
-    "/:out-of-stock-products",
+    "/out-of-stock-products",
     validateJWT,
     validateRolActions,
     getOutOfStockProducts
