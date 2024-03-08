@@ -56,7 +56,7 @@ export const productsPut = async (req, res) => {
     });
 }
 
-export const categoriesDelete = async (req, res) => {
+export const productsDelete = async (req, res) => {
 
     const { id } = req.params;
 

@@ -1,30 +1,30 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import {
-    categoriesGet,
-    categoriesPost,
-    getCategoryById,
-    categoriesPut,
-    categoriesDelete,
-} from "./category.controller.js";
+    productsGet,
+    productsPost,
+    getProductById,
+    productsPut,
+    productsDelete,
+} from "./product.controller.js";
 import {
-    existsCategoryById,
+    existsProductById,
 } from "../helpers/db-validators.js";
 import { validateFields, validateRolActions } from "../middlewares/validate-fields.js";
 import { validateJWT } from "../middlewares/validate-jwt.js";
 
 const router = Router();
 
-router.get("/", categoriesGet);
+router.get("/", productsGet);
 
 router.get(
     "/:id",
     [
         check("id", "No es un ID válido").isMongoId(),
-        check("id").custom(existsCategoryById),
+        check("id").custom(existsProductById),
         validateFields,
     ],
-    getCategoryById
+    getProductById
 );
 
 router.post(
@@ -35,7 +35,7 @@ router.post(
         validateRolActions,
         validateFields,
     ],
-    categoriesPost
+    productsPost
 );
 
 router.put(
@@ -43,11 +43,11 @@ router.put(
     [
         validateJWT,
         check("id", "No es un ID válido").isMongoId(),
-        check("id").custom(existsCategoryById),
+        check("id").custom(existsProductById),
         validateRolActions,
         validateFields,
     ],
-    categoriesPut
+    productsPut
 );
 
 router.delete(
@@ -55,11 +55,11 @@ router.delete(
     [
         validateJWT,
         check("id", "No es un ID válido").isMongoId(),
-        check("id").custom(existsCategoryById),
+        check("id").custom(existsProductById),
         validateRolActions,
         validateFields,
     ],
-    categoriesDelete
+    productsDelete
 );
 
 export default router;
