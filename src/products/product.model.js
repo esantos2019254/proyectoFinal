@@ -27,4 +27,8 @@ const ProductSchema = mongoose.Schema({
     },
 });
 
+ProductSchema.statics.findOutOfStockProducts = async function() {
+    return this.find({ quantityStock: 0 });
+};
+
 export default mongoose.model('Product', ProductSchema);

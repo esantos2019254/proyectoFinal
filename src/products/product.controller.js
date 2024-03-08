@@ -19,6 +19,34 @@ export const productsGet = async (req = request, res = response) => {
     });
 }
 
+export const getOutOfStockProducts = async (req, res) => {
+    try {
+        const outOfStockProducts = await Product.findOutOfStockProducts();
+
+        res.status(200).json({
+            total: outOfStockProducts.length,
+            outOfStockProducts
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+}
+
+export const getBestSellingProducts = async (req, res) => {
+    try {
+        const bestSellingProducts = await Product.find().sort({ quantitySold: -1 });
+
+        res.status(200).json({
+            total: bestSellingProducts.length,
+            bestSellingProducts
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+}
+
 export const getProductById = async (req, res) => {
 
     const { id } = req.params;
@@ -30,7 +58,7 @@ export const getProductById = async (req, res) => {
 }
 
 export const productsPost = async (req, res) => {
-    
+
     const { name, price, quantityStock, quantitySold, category } = req.body;
     const product = new Product({ name, price, quantityStock, quantitySold, category });
 

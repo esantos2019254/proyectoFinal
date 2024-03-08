@@ -6,6 +6,8 @@ import {
     getProductById,
     productsPut,
     productsDelete,
+    getOutOfStockProducts,
+    getBestSellingProducts,
 } from "./product.controller.js";
 import {
     existsProductById,
@@ -25,6 +27,15 @@ router.get(
         validateFields,
     ],
     getProductById
+);
+
+router.get(
+    "/:out-of-stock-products",
+    getOutOfStockProducts
+);
+
+router.get('/:best-selling-products', 
+    getBestSellingProducts
 );
 
 router.post(
