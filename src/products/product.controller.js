@@ -39,7 +39,7 @@ export const getOutOfStockProducts = async (req, res) => {
 
 export const getBestSellingProducts = async (req, res) => {
     try {
-        const bestSellingProducts = await Product.find().sort({ quantitySold: -1 });
+        const bestSellingProducts = await Product.find().sort({ quantitySold: -1 }).populate({path: 'category',select: 'name -_id'});
 
         res.status(200).json({
             total: bestSellingProducts.length,
@@ -54,7 +54,7 @@ export const getBestSellingProducts = async (req, res) => {
 export const getProductById = async (req, res) => {
 
     const { id } = req.params;
-    const product = await Product.findOne({ _id: id });
+    const product = await Product.findOne({ _id: id }).populate({path: 'category',select: 'name -_id'});
 
     res.status(200).json({
         product
@@ -66,13 +66,25 @@ export const searchProductsByName = async (req, res) => {
     const { name } = req.params;
 
     try {
-        const products = await Product.find({ name: { $regex: new RegExp(name, 'i') } });
+        const products = await Product.find({ name: { $regex: new RegExp(name, 'i') } }).populate({path: 'category',select: 'name -_id'});
         res.status(200).json({ products });
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 }
+
+export const searchProductsByCategory = async (req, res) => {
+    const { categoryName } = req.params;
+
+    try {
+        const products = await Product.find({ category: categoryName }).populate({path: 'category',select: 'name -_id'});;
+        res.status(200).json({ products });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+};
 
 export const productsPost = async (req, res) => {
 
