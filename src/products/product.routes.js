@@ -44,10 +44,11 @@ router.get(
 );
 
 router.get('/:best-selling-products',
+    validateJWT,
     getBestSellingProducts
 );
 
-router.get('/:products/search/:name',
+router.get('/search/:name',
     searchProductsByName
 );
 
