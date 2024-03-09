@@ -1,28 +1,84 @@
 [{
   "_id": {
-    "$oid": "65ea943de252e9f5b7cfed3f"
+    "$oid": "65ebf55ccabb69c86284ee80"
   },
-  "name": "pan",
-  "price": 123.324,
-  "quantityStock": 12,
-  "quantitySold": 0,
+  "name": "Manzanas",
+  "price": 3.5,
+  "quantityStock": 496,
+  "quantitySold": 304,
   "state": true,
   "category": {
-    "$oid": "65ea6a7f431a006ff5f88443"
+    "$oid": "65ebf41192defe978d7ecf5e"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "65ea9450e252e9f5b7cfed42"
+    "$oid": "65ebf569cabb69c86284ee83"
   },
   "name": "Peras",
-  "price": 123.324,
-  "quantityStock": 12,
+  "price": 4.5,
+  "quantityStock": 570,
+  "quantitySold": 330,
+  "state": true,
+  "category": {
+    "$oid": "65ebf41192defe978d7ecf5e"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ebf589cabb69c86284ee86"
+  },
+  "name": "Cocacola",
+  "price": 5,
+  "quantityStock": 300,
+  "quantitySold": 123,
+  "state": true,
+  "category": {
+    "$oid": "65ebf41592defe978d7ecf61"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ebf595cabb69c86284ee89"
+  },
+  "name": "a",
+  "price": 5,
+  "quantityStock": 300,
   "quantitySold": 0,
   "state": true,
   "category": {
-    "$oid": "65ea6a7f431a006ff5f88443"
+    "$oid": "65eb6b297f99b7b5a0809811"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ebf598cabb69c86284ee8c"
+  },
+  "name": "af",
+  "price": 5,
+  "quantityStock": 300,
+  "quantitySold": 0,
+  "state": true,
+  "category": {
+    "$oid": "65eb6b297f99b7b5a0809811"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ebf59acabb69c86284ee8f"
+  },
+  "name": "Peras",
+  "price": 123.324,
+  "quantityStock": 0,
+  "quantitySold": 0,
+  "state": true,
+  "category": {
+    "$oid": "65eb6b297f99b7b5a0809811"
   },
   "__v": 0
 }]

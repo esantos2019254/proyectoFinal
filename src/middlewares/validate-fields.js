@@ -20,7 +20,7 @@ export const validateRol = (req, res, next) => {
     const userRole = req.user.role;
 
     if (userRole === 'CLIENT_ROLE' && req.user.id !== id) {
-        return res.status(403).json({ msg: 'You can only edit or delete your data' });
+        return res.status(403).json({ msg: 'You can only view, edit or delete your data' });
     }
 
     if (userRole === 'CLIENT_ROLE') {

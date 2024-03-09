@@ -17,11 +17,12 @@ import { validateJWT } from "../middlewares/validate-jwt.js";
 
 const router = Router();
 
-router.get("/", usersGet);
+router.get("/", validateJWT, validateRol, usersGet);
 
 router.get(
     "/:id",
     [
+        validateJWT,
         check("id", "No es un ID válido").isMongoId(),
         check("id").custom(existsUserById),
         validateFields,

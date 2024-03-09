@@ -1,0 +1,29 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "History",
+    "dateExported": "2024-03-09T05:57:19.657Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "1714bcf4-c4b0-41b5-b8e8-be7199342232",
+            "colId": "9fbaec10-ad2f-4376-9617-5b921c2aa70b",
+            "containerId": "",
+            "name": "historyPurchase",
+            "url": "http://localhost:3000/ventasAPI/v1/invoice/65ea349c6154f5eb33495ffb",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-09T04:37:07.688Z",
+            "modified": "2024-03-09T05:56:43.856Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZDljZTlmYWNlOTZiOTg4ZTRjYjUiLCJpYXQiOjE3MDk5NjM3MTYsImV4cCI6MTcwOTk2NzMxNn0.kYPwW3LVnhFU2Vbx6bzYosBFlhTa2TTFPUCoBEBFa88"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        }
+    ]
+}

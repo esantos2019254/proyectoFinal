@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Users",
-    "dateExported": "2024-03-08T04:34:46.471Z",
+    "dateExported": "2024-03-09T05:27:09.360Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,8 +14,33 @@
             "method": "GET",
             "sortNum": 5000,
             "created": "2024-03-06T02:57:56.624Z",
-            "modified": "2024-03-06T02:58:04.973Z",
-            "headers": [],
+            "modified": "2024-03-09T05:18:40.349Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViZjBiOTE3ZDJlOGFiOGYwOTY5OWYiLCJpYXQiOjE3MDk5NjE0MjEsImV4cCI6MTcwOTk2NTAyMX0.ZkUHN9mNUv-M2gp8cXiWuOp_JE-MGXmN161ic9TR3cg"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "f4065eac-cf6e-401f-9a6d-ee382b230acd",
+            "colId": "2c5db0ba-9c67-42de-b05a-ab471793c324",
+            "containerId": "",
+            "name": "viewAccount",
+            "url": "http://localhost:3000/ventasAPI/v1/users/65ea349c6154f5eb33495ffb",
+            "method": "GET",
+            "sortNum": 7500,
+            "created": "2024-03-09T05:20:17.086Z",
+            "modified": "2024-03-09T05:24:04.501Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViZjBiOTE3ZDJlOGFiOGYwOTY5OWYiLCJpYXQiOjE3MDk5NjE4MzAsImV4cCI6MTcwOTk2NTQzMH0.-mNrdqd38SJZx6tN92eLc-3e8bn90j-N2QGn7UhO-kU"
+                }
+            ],
             "params": [],
             "tests": []
         },
@@ -44,15 +69,15 @@
             "colId": "2c5db0ba-9c67-42de-b05a-ab471793c324",
             "containerId": "",
             "name": "updateUSER",
-            "url": "http://localhost:3000/ventasAPI/v1/users/65ea349c6154f5eb33495ffb",
+            "url": "http://localhost:3000/ventasAPI/v1/users/65ebf0b917d2e8ab8f09699f",
             "method": "PUT",
             "sortNum": 20000,
             "created": "2024-03-06T02:51:05.478Z",
-            "modified": "2024-03-07T22:57:01.852Z",
+            "modified": "2024-03-09T05:25:05.894Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhMzQ5YzYxNTRmNWViMzM0OTVmZmIiLCJpYXQiOjE3MDk4NTIxNzMsImV4cCI6MTcwOTg1NTc3M30.0hXKtGyx8ITaTW42XmSgiwSQEMJeFXEwee_l1pGBZto"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViZjBiOTE3ZDJlOGFiOGYwOTY5OWYiLCJpYXQiOjE3MDk5NjE4MzAsImV4cCI6MTcwOTk2NTQzMH0.-mNrdqd38SJZx6tN92eLc-3e8bn90j-N2QGn7UhO-kU"
                 }
             ],
             "params": [],
@@ -69,18 +94,23 @@
             "colId": "2c5db0ba-9c67-42de-b05a-ab471793c324",
             "containerId": "",
             "name": "deleteUser",
-            "url": "http://localhost:3000/ventasAPI/v1/users/65ea349c6154f5eb33495ffb",
+            "url": "http://localhost:3000/ventasAPI/v1/users/65ebf0b917d2e8ab8f09699f",
             "method": "DELETE",
             "sortNum": 30000,
             "created": "2024-03-06T02:57:02.523Z",
-            "modified": "2024-03-07T23:16:52.208Z",
+            "modified": "2024-03-09T05:26:10.590Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhMzQ5YzYxNTRmNWViMzM0OTVmZmIiLCJpYXQiOjE3MDk4NTMzODYsImV4cCI6MTcwOTg1Njk4Nn0.lHaZP6cZqpg1kzUbnjBFEZYCbA7mh0QCj50OPwGT3no"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViZjBiOTE3ZDJlOGFiOGYwOTY5OWYiLCJpYXQiOjE3MDk5NjE4MzAsImV4cCI6MTcwOTk2NTQzMH0.-mNrdqd38SJZx6tN92eLc-3e8bn90j-N2QGn7UhO-kU"
                 }
             ],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
             "reqType": "del",
             "tests": []
         }

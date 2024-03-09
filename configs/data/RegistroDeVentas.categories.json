@@ -1,6 +1,14 @@
 [{
   "_id": {
-    "$oid": "65ea6a7f431a006ff5f88443"
+    "$oid": "65eb6b297f99b7b5a0809811"
+  },
+  "name": "Default",
+  "state": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ebf41192defe978d7ecf5e"
   },
   "name": "Alimentos",
   "state": true,
@@ -8,17 +16,17 @@
 },
 {
   "_id": {
-    "$oid": "65ea6a84431a006ff5f88446"
+    "$oid": "65ebf41592defe978d7ecf61"
   },
-  "name": "actualizado",
-  "state": false,
+  "name": "Bebidas",
+  "state": true,
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "65ea6aa2431a006ff5f88449"
+    "$oid": "65ebf41a92defe978d7ecf64"
   },
-  "name": "Moda y accesorios",
-  "state": true,
+  "name": "actualizado",
+  "state": false,
   "__v": 0
 }]

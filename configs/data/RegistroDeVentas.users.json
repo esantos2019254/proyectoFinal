@@ -17,19 +17,19 @@
   "name": "Rodrigo",
   "lastName": "García",
   "email": "rgarcia@kinal.edu.gt",
-  "password": "$2a$10$0GrJ2iyi11EiXglIXD/avuHz54j..x8jco1eBUSpEtgWJ7p7qzaVe",
+  "password": "$2a$10$OErQoCvl1aAKbqH0E3g6eO2m474GLtrPwuQjFn07fEOgAealnwvqi",
   "role": "CLIENT_ROLE",
   "state": true,
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "65ea386f511fbd5a8439c1f6"
+    "$oid": "65ebf0b917d2e8ab8f09699f"
   },
-  "name": "Julio",
-  "lastName": "Jimenez",
-  "email": "jjimenez@kinal.edu.gt",
-  "password": "$2a$10$KO1s73TIDcn1S/4bi1MjAOvKQ10YPqcPHPmk/r7nUcUYF2GFl0.ra",
+  "name": "Rodrigo",
+  "lastName": "García",
+  "email": "ajimenez@kinal.edu.gt",
+  "password": "$2a$10$w0QaQ6zbUazRAriSOfNN9e39pdYFv6/6xiqwj/6YEPCi1/GHMUc66",
   "role": "CLIENT_ROLE",
   "state": true,
   "__v": 0

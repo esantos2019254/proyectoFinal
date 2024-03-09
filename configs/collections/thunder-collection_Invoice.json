@@ -1,0 +1,34 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Invoice",
+    "dateExported": "2024-03-09T05:57:09.034Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "671c93b3-dc53-4607-b9c7-c375421217ae",
+            "colId": "1ec2f003-b06c-45c9-aa16-4066168dbb65",
+            "containerId": "",
+            "name": "updateInvoice",
+            "url": "http://localhost:3000/ventasAPI/v1/invoice/65ebf92fa094d1be159e56d0",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-03-09T04:05:28.150Z",
+            "modified": "2024-03-09T05:55:46.589Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZDljZTlmYWNlOTZiOTg4ZTRjYjUiLCJpYXQiOjE3MDk5NjM3MTYsImV4cCI6MTcwOTk2NzMxNn0.kYPwW3LVnhFU2Vbx6bzYosBFlhTa2TTFPUCoBEBFa88"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"items\": [\n    {\n      \"product\": \"65ebf55ccabb69c86284ee80\",\n      \"quantity\": 2\n    },\n    {\n      \"product\": \"65ebf569cabb69c86284ee83\",\n      \"quantity\": 2\n    }\n  ]\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "tests": []
+        }
+    ]
+}
