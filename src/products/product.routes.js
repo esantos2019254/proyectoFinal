@@ -25,21 +25,11 @@ router.get("/",
 );
 
 router.get(
-    "/:id",
+    "/out-of-stock-products",
     [
         validateJWT,
-        check("id", "No es un ID válido").isMongoId(),
-        check("id").custom(existsProductById),
         validateRolActions,
-        validateFields,
     ],
-    getProductById
-);
-
-router.get(
-    "/out-of-stock-products",
-    validateJWT,
-    validateRolActions,
     getOutOfStockProducts
 );
 
@@ -54,6 +44,18 @@ router.get('/search/:name',
 
 router.get("/categories/:categoryName", 
     searchProductsByCategory
+);
+
+router.get(
+    "/:id",
+    [
+        validateJWT,
+        check("id", "No es un ID válido").isMongoId(),
+        check("id").custom(existsProductById),
+        validateRolActions,
+        validateFields,
+    ],
+    getProductById
 );
 
 router.post(
