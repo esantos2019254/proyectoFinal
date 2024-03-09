@@ -12,7 +12,7 @@ import {
     esRoleValido,
     existsUserById,
 } from "../helpers/db-validators.js";
-import { validateFields, validateRol } from "../middlewares/validate-fields.js";
+import { validateFields, validateRol, validateDeleteUser } from "../middlewares/validate-fields.js";
 import { validateJWT } from "../middlewares/validate-jwt.js";
 
 const router = Router();
@@ -66,6 +66,7 @@ router.delete(
         check("id", "No es un ID válido").isMongoId(),
         check("id").custom(existsUserById),
         validateRol,
+        validateDeleteUser,
         validateFields,
     ],
     usersDelete

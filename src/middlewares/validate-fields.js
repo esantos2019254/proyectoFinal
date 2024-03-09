@@ -1,6 +1,8 @@
 import { validationResult } from "express-validator";
+import bcryptjs from 'bcryptjs';
 import Category from '../categories/category.model.js';
 import Product from '../products/product.model.js';
+import User from '../users/user.model.js';
 
 export const validateFields = (req, res, next) => {
     const error = validationResult(req);
@@ -67,3 +69,28 @@ export const validateDeleteCategory = async (req, res, next) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 }
+export const validateDeleteUser = async (req, res, next) => {
+    const { id } = req.params;
+    const { password } = req.body;
+
+    try {
+        const user = await User.findById(id);
+
+        if (!user) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        console.log("Contraseña recibida:", password);
+        console.log("Contraseña almacenada:", user.password);
+        const isPasswordValid = await bcryptjs.compare(password, user.password);
+
+        if (!isPasswordValid) {
+            return res.status(401).json({ error: "Invalid password" });
+        }
+
+        next();
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
